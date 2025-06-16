@@ -1,0 +1,5 @@
+import:
+    resource: "@ImportBundle/src/Controller/"
+    type:     annotation
+    prefix:   /
+

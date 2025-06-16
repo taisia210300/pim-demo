@@ -1,0 +1,18 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    ImportBundle\:
+        resource: '../src/*'
+        exclude: '../src/{Entity,Tests}'
+
+    ImportBundle\Service\ImportService:
+        arguments:
+            $logger: '@monolog.logger.import'
+
+    ImportBundle\Command\ImportCollectionsCommand:
+        arguments:
+            $importService: '@ImportBundle\Service\ImportService'
+        tags: ['console.command']
