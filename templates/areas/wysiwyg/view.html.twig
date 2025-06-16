@@ -1,0 +1,7 @@
+{% set content = pimcore_wysiwyg('content') %}
+
+<section class="area-wysiwyg">
+    {% apply pimcore_glossary %}
+        {{ content|raw }}
+    {% endapply %}
+</section>

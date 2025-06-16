@@ -1,0 +1,5 @@
+pimcore:
+    bundles:
+        search_paths:
+            - '%kernel.project_dir%/bundles/ImportBundle'
+            - '%kernel.project_dir%/bundles'

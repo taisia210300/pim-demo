@@ -1,0 +1,20 @@
+monolog:
+    channels: ['odyssey', 'import']
+    handlers:
+        main:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+            channels: ["!event", "!odyssey", "!import"]
+
+        odyssey_file:
+            type: stream
+            path: '%kernel.logs_dir%/odyssey.log'
+            level: debug
+            channels: ['odyssey']
+
+        import:
+            type: stream
+            path: '%kernel.logs_dir%/import.log'
+            level: debug
+            channels: ['import']
